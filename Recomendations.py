@@ -39,3 +39,11 @@ def pearson_correlation(person1,person2):
 		r = numerator_value/denominator_value
 		return r 
 
+def similar_users(person,number_of_users):
+	scores = [(pearson_correlation(person,other_person),other_person) for other_person in dataset if  other_person != person ]
+	scores.sort()
+	scores.reverse()
+	return scores[0:number_of_users]
+print (similar_users)
+
+
