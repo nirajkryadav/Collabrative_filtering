@@ -1,4 +1,4 @@
-from cources import dataset
+from courses import dataset
 from math import sqrt
 def similarity_score(person1,person2):
 	similarity = {}
@@ -12,8 +12,10 @@ def similarity_score(person1,person2):
 				eclidean_distance.append(pow(dataset[person1][rating] - dataset[person2][rating],2))
 		eclidean_distance = sum(eclidean_distance)
 		return 1/(1+sqrt(eclidean_distance))
+		
 # 12 and 13 will be person id 
 #print similarity_score(12,13)
+
 def pearson_correlation(person1,person2):
 	both_rated = {}
 	for item in dataset[person1]:
@@ -46,7 +48,6 @@ def similar_users(person,number_of_users):
 	scores.reverse()
 	return scores[0:number_of_users]
 #print (similar_users)
-
 
 def reommendations(person):
 	# Gets recommendations for a person by using a weighted average of every other user's rankings
