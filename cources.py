@@ -467,7 +467,6 @@ while i<=1000:
 		no-=1
 	dataset[str(i)]=recomendation_by_user
 	i+=1
-dataset = json.dumps(dataset,indent=2)
-#print (dataset)
 
+#print json.dumps(dataset, indent=2)
 
